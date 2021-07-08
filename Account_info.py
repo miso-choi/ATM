@@ -1,5 +1,4 @@
 import random
-import time
 
 class Account_info:
     def get_UserName(self):
@@ -34,8 +33,6 @@ class Account_info:
         print('\n[2단계: 계좌번호 생성]')
         
         print('계좌번호 생성중...')
-        # 현장감을 주기 위한 시간 지연(1초)
-        time.sleep(1)
         
         # ○○은행 계좌번호 앞의 여섯 자리는 동일
         first_3_3 = '110123'
@@ -79,8 +76,6 @@ class Account_info:
         print('\n[4단계: 카드번호 생성]')
         
         print('카드번호 생성중...')
-        # 현장감을 주기 위한 시간 지연(1초)
-        time.sleep(1)
         
         card_num = str(random.randrange(1000000000000000,9999999999999999))
         

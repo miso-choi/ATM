@@ -1,7 +1,6 @@
 # .py파일 불러오기
 from Account_info import Account_info
 from ATMSequence import ATMSequence
-import time
 import pandas as pd
 import random
 
@@ -47,7 +46,6 @@ def SubMenu(user_df,idx):
             print('\n[잔액조회]')
             print('고객님 계좌의 잔액은 $',user_df.iloc[idx][:]['balance'],'입니다.')
             print('\n메뉴 선택 화면으로 돌아갑니다..')
-            time.sleep(0.5)
             continue
    
         elif user_sub  == '2':
@@ -62,7 +60,6 @@ def SubMenu(user_df,idx):
                         user_df.iloc[idx][:]['balance'] += depo_input
                         print('예금 후 잔액은 $',user_df.iloc[idx][:]['balance'],'입니다.')
                         print('\n메뉴 선택 화면으로 돌아갑니다..')
-                        time.sleep(0.5)
                         break
                     elif depo_input == 0:
                         print('입력오류::: $0은 예금하실 수 없습니다.')
@@ -89,7 +86,6 @@ def SubMenu(user_df,idx):
                             user_df.iloc[idx][:]['balance'] -= with_input
                             print('출금 후 잔액은 $',user_df.iloc[idx][:]['balance'],'입니다.')
                             print('\n메뉴 선택 화면으로 돌아갑니다..')
-                            time.sleep(0.5)
                             break
                         else:
                             print('잔액이 부족하여 출금할 수 없습니다. 잔액보다 작거나 같은 금액을 입력해주세요.')
@@ -169,7 +165,6 @@ if __name__ == "__main__":
                 user_df = MakeAccount(user_df)
                 print('\n**계좌 생성 완료** ')
                 print('처음 화면으로 돌아갑니다..')
-                time.sleep(0.5)
                 continue
             elif a == 2:
                 print('<<< ATM Controller 모드 >>>')
@@ -189,7 +184,6 @@ if __name__ == "__main__":
                         user_df = SubMenu(user_df,idx)
                     #user_df  # 나중에 삭제(확인용)
                 print('처음 화면으로 돌아갑니다..')
-                time.sleep(0.5)
                 continue
             else:
                 print('\n###  1이나 2가 아닌 다른 값을 입력받았습니다.  ###')
